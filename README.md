@@ -22,6 +22,29 @@ with the CPL ridge constraint `w_a = -q(1 + w_0)` reducing the effective paramet
 
 ---
 
+## Downloading this repository
+
+You can reproduce the results either by cloning the repository or by downloading a release asset.
+
+### Option A: clone with git (recommended)
+
+```bash
+git clone https://github.com/diatimis/ace-dr2-repro.git
+cd ace-dr2-repro
+```
+
+This preserves the full folder structure (required to run the helper scripts and aliases as written).
+
+### Option B: download a Release asset (zip)
+
+If you prefer not to use git, go to the repository Releases page and download the attached zip asset. Extract it, then follow the same instructions below.
+
+**Note:** GitHub web uploads do not preserve folder trees reliably. If you upload from the website, use a zip Release asset, or use git to push folders.
+
+### GitHub size limits
+
+This repository is about 23 MB, which is fine. The main practical limit is **100 MB per individual file** on GitHub. If you ever add larger data products, prefer attaching them as Release assets or use Git LFS.
+
 ## What is included and what is not
 
 Included in this repository:
@@ -115,6 +138,15 @@ Each run is a self-contained folder. Every folder contains:
 | Run 3cC DR2 | `ace_shoes_strong_curved_fixed_desiDR2` | Tension | `check_ace_shoes_strong_curved_fixed_dr2` |
 
 ---
+
+## Cobaya externals and CLASS location notes
+
+Cobaya can find external codes (like CLASS) in two common ways:
+
+- `packages_path:` set inside the run YAML, or
+- the environment variable `COBAYA_PACKAGES_PATH` set in your shell.
+
+In the author environment, CLASS exists as a **source tree** under a packages path but is not necessarily importable as `classy` (Python module). The environment snapshot under `tools/env/` records what can be detected automatically (Python, Cobaya, pip packages, Cobaya CLI path, and a deterministic CLASS source fingerprint when a CLASS-like source tree is found).
 
 ## Environment Activation
 
@@ -275,7 +307,11 @@ python3 package_github_upload.py \
   --venv-activate ~/cobaya_env/bin/activate
 ```
 
-To stage all runs, either pass a full list to `--runs`, or use `--auto-detect-runs` (only detects run folders directly under `--base`).
+To stage **all** runs, either:
+- pass the full list to `--runs` (most explicit), or
+- use `--auto-detect-runs` **only if** your run folders live directly under `--base` (it does not recurse).
+
+If your runs live under your home directory (for example `~/ace_global_fixed_desiDR2`), set `--base "$HOME"` and either pass `--runs ...` explicitly or place the run folders directly under that base.
 
 ---
 
