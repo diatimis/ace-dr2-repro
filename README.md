@@ -3,7 +3,7 @@
 **Companion code repository for:**
 
 > Nikoo Eslami, *An H² Tracking Vacuum Sector from Causal Coarse Graining*  
-> Preprint DOI: 10.5281/zenodo.16938680  
+> Preprint DOI: 10.5281/zenodo.18676704  
 > ORCID: 0009-0007-7399-9301
 
 ---
@@ -328,7 +328,7 @@ CC BY 4.0 — see [LICENSE](LICENSE)
   author       = {Nikoo Eslami},
   title        = {An H² Tracking Vacuum Sector from Causal Coarse Graining},
   year         = {2026},
-  doi          = {10.5281/zenodo.16938680},
+  doi          = {10.5281/zenodo.18676704},
   orcid        = {0009-0007-7399-9301}
 }
 ```
