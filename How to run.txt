@@ -1,0 +1,20 @@
+python3 package_github_upload.py \
+  --base "$HOME" \
+  --out "$HOME/ace_repo_staging" \
+  --force --zip --env-snapshot \
+  --venv-activate ~/cobaya_env/bin/activate \
+  --runs \
+    ace_global_curved_fixed_desiDR2 \
+    ace_cpl_global_diag_desiDR2 \
+    ace_shoes_curved_fixed_desiDR2 \
+    ace_shoes_fixed_desiDR2 \
+    ace_shoes_diag_desiDR2 \
+    lcdm_baseline_desiDR2 \
+    ace_global_desiDR2 \
+    ace_shoes_strong_curved_fixed_desiDR2 \
+    ace_shoes_constrained_desiDR2 \
+    ace_global_fixed_desiDR2 \
+    lcdm_shoes_baseline_desiDR2 \
+    ace_shoes_strong_fixed_desiDR2 \
+    ace_global_fixed_q3_desiDR2
+
